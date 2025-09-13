@@ -26,7 +26,7 @@ async function startServer() {
   setupSocket(io); // socket funcionando
 
   server.listen(port, () => {
-    console.log(`Servidor Express rodando na porta ${port}`);
+    console.log(`Servidor Express + Socket.IO rodando na porta ${port}`);
   });
 }
 
