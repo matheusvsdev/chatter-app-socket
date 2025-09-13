@@ -13,7 +13,7 @@
 
 Este projeto é uma aplicação de chat em tempo real construída com Node.js utilizando TypeScript, Express, MongoDB, Socket.IO e JavaScript puro no frontend. Ele permite que usuários se autentiquem, enviem mensagens, visualizem conversas e recebam atualizações instantâneas.
 
-![Preview do sistema](frontend/img/chatter.png)
+![Preview do sistema](preview.png)
 
 # Funcionalidades
 
