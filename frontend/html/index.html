@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatter - Chat</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <aside class="sidebar">
+        <header class="user-profile">
+          <img
+            id="user-img"
+            src=""
+            alt="Sua foto de perfil"
+            class="profile-img"
+          />
+          <span id="user-name"></span>
+          <button id="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </header>
+
+        <div class="search-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscar ou começar nova conversa"
+          />
+          <button id="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div id="search-result" class="search-result"></div>
+
+        <h2 class="title-conversation">Conversas</h2>
+        <ul id="conversation-list" class="conversation-list"></ul>
+      </aside>
+
+      <main class="chat-area">
+        <header id="chat-header" class="hidden">
+          <div class="header-profile">
+            <button id="back-btn">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <img
+              id="chat-contact-image"
+              src=""
+              alt="Foto do contato"
+              class="profile-img hidden"
+            />
+            <h3 id="chat-contact-name"></h3>
+          </div>
+          <button id="close-btn">
+            <i class="fa-solid fa-square-xmark"></i>
+          </button>
+        </header>
+
+        <div id="messages-container" class="messages-container"></div>
+
+        <div class="message-input-area hidden">
+          <input
+            type="text"
+            id="message-content"
+            placeholder="Digite uma mensagem..."
+          />
+          <button id="send-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="../js/index.js" type="module"></script>
+  </body>
+</html>
