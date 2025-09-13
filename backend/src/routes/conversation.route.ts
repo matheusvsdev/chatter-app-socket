@@ -4,6 +4,6 @@ import { authenticateToken } from "../middlewares/authenticate.middleware";
 
 const router = Router();
 
-router.get("/conversations", authenticateToken, getConversations);
+router.get("/api/conversations", authenticateToken, getConversations);
 
 export default router;

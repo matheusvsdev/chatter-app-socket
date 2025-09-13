@@ -4,6 +4,7 @@ import app from "./app";
 import connectDB from "./config/database";
 import { Server } from "socket.io";
 import { setupSocket } from "./web/socket";
+import messageRoute from "./routes/message.route";
 import fs from "fs";
 
 const uploadDir = "uploads";
@@ -24,6 +25,7 @@ async function startServer() {
   });
 
   setupSocket(io); // socket funcionando
+  app.use("/api", messageRoute(io));
 
   server.listen(port, () => {
     console.log(`Servidor Express + Socket.IO rodando na porta ${port}`);
