@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatter - Login</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <div id="login-container" class="form-section">
+        <h1 class="logo">Chatter</h1>
+        <h2>Login</h2>
+        <form id="login-form">
+          <label for="login-phone" style="display: none"
+            >Número de celular</label
+          >
+          <input
+            type="text"
+            id="login-phone"
+            placeholder="Número de celular"
+            autocomplete="tel-national"
+            required
+          />
+          <label for="login-password" style="display: none">Senha</label>
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit" id="login-btn">Entrar</button>
+        </form>
+        <span
+          >Não tem uma conta?
+          <a href="#" id="link-register">Cadastre-se</a></span
+        >
+      </div>
+
+      <div id="register-container" class="form-section" style="display: none">
+        <h1 class="logo">Chatter</h1>
+        <h2>Cadastro</h2>
+        <form id="register-form">
+          <div class="photo-upload-container">
+            <label for="register-photo">
+              <span class="upload-text"></span>
+              <img
+                id="photo-preview"
+                src="../img/default-profile.jpg"
+                alt="Preview da Foto"
+              />
+            </label>
+            <input type="file" id="register-photo" accept="image/*" />
+          </div>
+          <label for="register-name" style="display: none">Nome</label>
+          <input
+            type="text"
+            id="register-name"
+            placeholder="Nome"
+            autocomplete="name"
+            required
+          />
+          <label for="register-phone" style="display: none"
+            >Número de celular</label
+          >
+          <input
+            type="text"
+            id="register-phone"
+            placeholder="Número de celular"
+            autocomplete="tel-national"
+            required
+          />
+          <label for="register-password" style="display: none">Senha</label>
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Senha"
+            required
+          />
+          <button type="submit" id="register-btn">Cadastrar</button>
+        </form>
+        <span>
+          Já tem uma conta?
+          <a href="#" id="link-login">Faça login</a>
+        </span>
+      </div>
+    </div>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

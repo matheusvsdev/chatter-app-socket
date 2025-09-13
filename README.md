@@ -34,6 +34,7 @@ backend/
  ┃ ┃ ┗---database.ts
  ┃ ┣---controllers/
  ┃ ┃ ┣---auth.controller.ts
+ ┃ ┃ ┃---conversation.controller.ts
  ┃ ┃ ┃---message.controller.ts
  ┃ ┃ ┗---user.controller.ts
  ┃ ┣---middlewares/
@@ -44,16 +45,17 @@ backend/
  ┃ ┃ ┗---user.model.ts
  ┃ ┣---routes/
  ┃ ┃ ┣---auth.route.ts
+ ┃ ┃ ┣---conversation.route.ts
  ┃ ┃ ┣---message.route.ts
  ┃ ┃ ┗---user.route.ts
  ┃ ┣---schemas/
  ┃ ┃ ┣---auth.schema.ts
  ┃ ┃ ┗---message.schema.ts
  ┃ ┣---services/
- ┃ ┃ ┗---message.service.ts
+ ┃ ┃ ┗---conversation.service.ts
  ┃ ┣---utils/
  ┃ ┃ ┣---jwt.util.ts
- ┃ ┃ ┣---storage.ts
+ ┃ ┃ ┣---storage.util.ts
  ┃ ┃ ┗---user.request.util.ts
  ┃ ┣---web/
  ┃ ┃ ┗---socket.ts
