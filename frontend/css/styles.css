@@ -1,0 +1,442 @@
+/* Estilos Globais e Reset */
+:root {
+  --primary-color: #0084ff;
+  --primary-dark: #006ddb;
+  --secondary-bg: #f0f2f5;
+  --sidebar-bg: #fff;
+  --chat-bg: #e5ddd5;
+  --my-message-bg: #dcf8c6;
+  --other-message-bg: #fff;
+  --border-color: #e5e5e5;
+  --text-dark: #333;
+  --text-gray: #777;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-bg);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+span {
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* Containers Principais */
+.auth-container,
+.main-container {
+  background-color: var(--sidebar-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.auth-container {
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 95vh;
+  overflow: hidden;
+}
+
+/* Componentes do Formulário */
+.form-section {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* Escondendo o input real de forma acessível */
+#register-photo {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Estilizando o label para ser o "botão" de upload */
+.photo-upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.photo-upload-container label {
+  display: flex; /* Use Flexbox para centralizar */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  opacity: 0.8;
+  transition: 0.3s ease-in-out;
+}
+
+/* Efeito de hover */
+.photo-upload-container label:hover {
+  opacity: 1;
+}
+
+/* Estilo do preview da foto (será controlado pelo JS) */
+#photo-preview {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+#register-btn,
+#login-btn {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Sidebar de Conversas */
+.sidebar {
+  min-width: 350px;
+  max-width: 400px;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+#user-name {
+  font-weight: 600;
+  flex-grow: 1;
+  margin-top: 0;
+}
+
+#logout-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.fa-right-from-bracket {
+  font-size: 1.2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 40px 10px 15px; /* Adicione 40px de padding à direita */
+}
+
+#search-btn {
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-75%);
+  z-index: 10;
+}
+
+#search-btn i {
+  color: var(--text-gray);
+}
+
+.search-results-list {
+  margin: 0;
+  background-color: var(--secondary-bg);
+}
+
+.title-conversation {
+  margin: 1rem;
+}
+
+.conversation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.conversation-item,
+.search-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s;
+}
+
+.conversation-item:hover,
+.search-item:hover {
+  background-color: var(--secondary-bg);
+}
+
+.conversation-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.conversation-info p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Área de Chat */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #cfd9df;
+  background-image: url("https://juniorsilveira.com.br/wp-content/uploads/2018/10/curso-background.png"); /* Fundo do chat */
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+
+#chat-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--sidebar-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.header-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#close-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+#close-btn i {
+  font-size: 1.4rem;
+}
+
+#back-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: transparent;
+  display: none;
+}
+
+#back-btn {
+  font-size: 1.2rem;
+  color: #006ddb;
+  font-weight: bolder;
+}
+
+.messages-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  max-width: 70%;
+  word-wrap: break-word;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+.my-message {
+  background-color: var(--my-message-bg);
+  align-self: flex-end;
+}
+
+.other-message {
+  background-color: var(--other-message-bg);
+  align-self: flex-start;
+  border: 1px solid var(--border-color);
+}
+
+.message-input-area {
+  display: flex;
+  padding: 10px 15px;
+  background-color: var(--secondary-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+#message-content {
+  flex-grow: 1;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+}
+
+#send-btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .sidebar {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-right: none;
+  }
+
+  .chat-area {
+    width: 100%;
+    height: 100%;
+    display: none; /* Inicia oculto em telas pequenas */
+  }
+
+  #back-btn {
+    display: block;
+  }
+
+  #close-btn {
+    display: none;
+  }
+
+  /* Exibe a área de chat quando uma conversa é selecionada */
+  .chat-area.active {
+    display: flex;
+  }
+}
+
+/* Seletor para ocultar a sidebar em telas de chat ativas */
+@media (max-width: 768px) {
+  .sidebar.inactive {
+    display: none;
+  }
+}
